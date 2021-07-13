@@ -1,0 +1,83 @@
+html,
+body {
+  overflow: hidden;
+}
+
+#wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+h1{
+  margin-top: 7vh;
+  margin-bottom: -10vh;
+  margin-left: 10vh;
+}
+
+h5{
+  margin-top: 7vh;
+  margin-bottom: -10vh;
+  margin-left: 14vh;
+}
+
+.large {
+  counter-reset: list-counter;
+  list-style: none;
+  float: left;
+}
+
+.large li {
+  margin: 1.5em 0;
+  line-height: 1em
+}
+
+.large li:before {
+  content: counter(list-counter);
+  counter-increment: list-counter;
+  font-family: arial;
+  color: #666;
+  font: bold;
+  font-size: 2em;
+  margin-right: .5em;
+}
+
+.box {
+  overflow-y: scroll;
+  background: #DCDCDC;
+  border: 1px solid #DCDCDC;
+  /* 線の太さ・種類・色 */
+  margin: 15vh;
+  /* 外側の余白 */
+  padding: 20px;
+  /* 内側の余白 */
+  /* position: relative; */
+  height: 65vh;
+}
+
+a {
+  color: #666;
+  position: relative;
+  display: inline-block;
+  transition: .3s;
+  text-decoration: none;
+}
+
+a::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #31aae2;
+  transition: .3s;
+  transform: translateX(-50%);
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+.font-large {
+  font-size: 1.1rem;
+}
