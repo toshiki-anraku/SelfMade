@@ -50,9 +50,9 @@ h5{
   /* 外側の余白 */
   padding: 20px;
   /* 内側の余白 */
-  /* position: relative; */
+  position: relative;
   height: 65vh;
-}
+ }
 
 a {
   color: #666;

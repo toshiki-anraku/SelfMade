@@ -11,7 +11,8 @@
 </head>
 <body>
   <div id="wrapper">
-    <header>
+  <div class="container">
+    <header class="row">
       <?php require('header_nonmember.php'); ?>
       <!-- <?php require('header_member.php'); ?> -->
     </header>
@@ -19,18 +20,26 @@
       <main>
         <article>
           <section>
-            <h1>Ranking</h1>
-
-            <div class="box">
-              <ul class="large">
-                <?php
-              for ($count = 0; $count < 20; $count++) {
-                echo "<li><a href= '/' >ユーザーネーム</a></li>";
-                }
-                ?>
-              </ul>
+            <div class="row">
+              <div class="col-12">
+                <h1>Ranking</h1>
+              </div>
+              <!-- col -->
             </div>
-            <!-- box -->
+            <!-- row -->
+            <div class="row">
+              <div class="col-10 bg-light text-dark">
+                  <ul class="large">
+                    <?php
+                      for ($count = 0; $count < 20; $count++) {
+                        echo "<li><a href= '/' >ユーザーネーム</a></li>";
+                        }
+                    ?>
+                  </ul>
+              </div>
+              <!-- col -->
+            </div>
+            <!-- row -->
           </section>
           <!-- section -->
         </article>
@@ -41,6 +50,7 @@
       <?php require('footer.php');?>
     </footer>
     <!-- footer -->
+  </div>
   </div>
   <!-- wrapper -->
   <script src="../public/js/jquery-3.5.1.js" type="text/javascript"></script>
