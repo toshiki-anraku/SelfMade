@@ -11,13 +11,12 @@
 </head>
 <body>
   <div id="wrapper">
-  <div class="container">
-    <header class="row">
+    <header>
       <?php require('header_nonmember.php'); ?>
       <!-- <?php require('header_member.php'); ?> -->
     </header>
     <!-- header -->
-      <main>
+      <main class="container-fluid">
         <article>
           <section>
             <div class="row">
@@ -28,7 +27,7 @@
             </div>
             <!-- row -->
             <div class="row">
-              <div class="col-10 bg-light text-dark">
+              <div class="col-10 bg-light text-dark box">
                   <ul class="large">
                     <?php
                       for ($count = 0; $count < 20; $count++) {
@@ -50,7 +49,6 @@
       <?php require('footer.php');?>
     </footer>
     <!-- footer -->
-  </div>
   </div>
   <!-- wrapper -->
   <script src="../public/js/jquery-3.5.1.js" type="text/javascript"></script>

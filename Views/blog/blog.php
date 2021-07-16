@@ -16,34 +16,46 @@
       <!-- <?php require('../header_member.php'); ?> -->
     </header>
     <!-- header -->
-      <main>
+      <main class="container-fluid">
         <article>
           <section>
-            <h1>Blog</h1>
-            <a href=""><h5>＋</h5></a>
+            <div class="row">
+              <div class="col-3">
+                <div class="row">
+                  <div class="col-1"><h1>Blog</h1></div>
+                  <div class="col-1 align-self-end plus"><a href="" class="lead">＋</a></div>
+                </div>
+              </div>
 
-            <div class="box">
-              <table width="100%" style="margin-left:3em;">
-              <tbody>
-                <?php
-              for ($count = 0; $count < 20; $count++) {
-                echo '<tr>
-                  <td width="80%" style="font-size:45px;"><a href="#"><strong><h2>ブログタイトル○○の持ち物ランキング100選</h2></strong></a></td>
-                  <td width="10%" align="right"><a class="btn btn-outline-secondary btn-sm" href="#" role="button">Edit</a></td>
-                  <td width="10%"><a  class="btn btn-outline-secondary btn-sm" href="#" role="button">Delete</a></td>
-                </tr>';
-                }
-                ?>
-                </tbody>
-              </table>
             </div>
-            <!-- box -->
+            <!-- row -->
+            <div class="row">
+              <div class="col-10 bg-light text-dark box">
+                <table width="100%" style="margin-left:3em;">
+                  <tbody>
+                    <?php
+                  for ($count = 0; $count < 20; $count++) {
+                    echo '<tr>
+                      <td width="80%" style="font-size:45px;"><a href="#"><strong><h2>ブログタイトル○○の持ち物ランキング100選</h2></strong></a></td>
+                      <td width="10%" align="right"><a class="btn btn-outline-secondary btn-sm" href="#" role="button">Edit</a></td>
+                      <td width="10%"><a  class="btn btn-outline-secondary btn-sm" href="#" role="button">Delete</a></td>
+                    </tr>';
+                    }
+                    ?>
+                  </tbody>
+                  <!-- tbody -->
+                </table>
+                <!-- table -->
+              </div>
+              <!-- box -->
+            </div>
+            <!-- row -->
           </section>
           <!-- section -->
         </article>
         <!-- article -->
       </main>
-      <!-- main -->
+      <!-- main container-fluid -->
     <footer>
       <?php require('../footer.php');?>
     </footer>

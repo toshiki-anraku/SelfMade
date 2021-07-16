@@ -5,7 +5,7 @@
 </head>
 <body>
     <!--Call your modal-->
-    <a id="demo01" href="#animatedModal">DEMO01</a>
+    <a id="Edit" href="#animatedModal">Edit</a>
 
     <!--DEMO01-->
     <div id="animatedModal">
@@ -21,12 +21,12 @@
 </body>
 <script>
   $(function(){
- $("#demo01").animatedModal({
+ $("#Edit").animatedModal({
    modalTarget:'animatedModal',
    animatedIn: 'rotateInUpRight',
    animatedOut: 'flipOutY',
    animationDuration: '1s',
-   color: '#DCDCDC',
+   color: '#f8f9fa',
    overflow: 'auto'
  });
 });
