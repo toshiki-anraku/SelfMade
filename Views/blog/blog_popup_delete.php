@@ -22,11 +22,11 @@
   <script src="../../public/js/jquery-3.5.1.js"></script>
   <script src="../../public/js/modaal.min.js"></script>
   <script>
-  $(function(){
- $('.modal').modaal(
-   
- );
-});
-</script>
+  $(function() {
+    $('.modal').modaal(
+
+    );
+  });
+  </script>
 </body>
 </html>
