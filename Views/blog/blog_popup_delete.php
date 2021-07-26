@@ -1,32 +1,34 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+<!-- Button trigger modal -->
 
-  <link rel="stylesheet" href="../../public/css/modaal.min.css">
-</head>
-<body>
+<a href="#"><button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#blog_Delete">
+    Delete
+  </button></a>
 
-  <a href="#modal" class="modal">Show</a>
-  <div id="modal" style="display:none;">
-    <div class="container">
-      <div class="row">
-        <div class="col">a</div>
+<!-- Modal -->
+<div class="modal fade" id="blog_Delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">ブログ削除</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <div class="mb-3">
+            <label for="exampleInputTitle" class="form-label">Title</label>
+            <p>ブログタイトル○○の持ち物ランキング100選</p>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">OK</button>
+        </div>
+      </form>
+
+      <div class="modal-content">
+        <!--Your modal content goes here-->
       </div>
     </div>
   </div>
-
-  <script src="../../public/js/jquery-3.5.1.js"></script>
-  <script src="../../public/js/modaal.min.js"></script>
-  <script>
-  $(function() {
-    $('.modal').modaal(
-
-    );
-  });
-  </script>
-</body>
-</html>

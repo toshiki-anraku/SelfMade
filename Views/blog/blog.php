@@ -25,10 +25,15 @@
                 <div class="col-1">
                   <h1>Blog</h1>
                 </div>
-                <div class="col-1 align-self-end plus"><a href="" class="lead">＋</a></div>
+                <!-- <div class="col-1 align-self-end plus"><a href="" class="lead">＋</a></div> -->
+                <div class="col-1 align-self-end plus">
+                  <?php require('./blog_popup_add.php'); ?>
+                </div>
+                <!-- col-1 -->
               </div>
+              <!-- row -->
             </div>
-
+            <!-- col-3 -->
           </div>
           <!-- row -->
           <div class="row">
@@ -39,11 +44,11 @@
                   for ($count = 0; $count < 20; $count++) {
                     echo '<tr>
                       <td width="80%" style="font-size:45px;"><a href="#"><strong><h2>ブログタイトル○○の持ち物ランキング100選</h2></strong></a></td>
-                      <td width="10%" align="right"><a class="btn btn-outline-secondary btn-sm" href="#" role="button">Edit</a></td>
-                      <td width="10%"><a  class="btn btn-outline-secondary btn-sm" href="#" role="button">Delete</a></td>
-                    </tr>';
-                    }
-                    ?>
+                      <td width="10%" align="right">',require('./blog_popup_edit.php'),'</td>
+                      <td width="10%">',require('./blog_popup_delete.php'),'</td>
+                      </tr>';
+                  }
+                  ?>
                 </tbody>
                 <!-- tbody -->
               </table>
