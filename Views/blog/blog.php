@@ -25,7 +25,6 @@
                 <div class="col-1">
                   <h1>Blog</h1>
                 </div>
-                <!-- <div class="col-1 align-self-end plus"><a href="" class="lead">＋</a></div> -->
                 <div class="col-1 align-self-end plus">
                   <?php require('./blog_popup_add.php'); ?>
                 </div>
