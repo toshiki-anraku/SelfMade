@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> TeBuRa PHPSelfMade Signup</title>
+  <title> TeBuRa PHPSelfMade Login</title>
   <!-- title -->
   <link rel="stylesheet" type="text/css" href="../../public/css//bootstrap.min.css">
   <!-- css -->

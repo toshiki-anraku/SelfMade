@@ -1,0 +1,26 @@
+/*--------画像サイズ調整---------*/
+  img{
+	  width:100%;
+  }
+
+  /*-----------height調整----------*/
+  .slick-slide{
+	  height:auto!important;
+  }
+
+  /*-----------矢印表示----------*/
+  .slick-next{
+    right:0!important;
+  }
+  .slick-prev{
+    left:0!important;
+  }
+  .slick-arrow{
+    width: initial!important;
+    height: initial!important;
+    z-index:2!important;
+  }
+  .slick-arrow:before{
+    font-size: 30px!important;
+  }
+/*------------------------------*/
