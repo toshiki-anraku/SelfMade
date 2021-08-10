@@ -1,0 +1,8 @@
+textarea.note {
+            line-height: 20px;
+            background: linear-gradient(to bottom, #eee 1px, white 1px);
+            background-size: 100% 20px;
+            background-origin: content-box;
+            background-attachment: local;
+            resize: none;
+          }

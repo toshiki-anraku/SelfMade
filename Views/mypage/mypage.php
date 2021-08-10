@@ -46,9 +46,11 @@
                 </button>
               </div>
               <div class="col-2 offset-3 text-end">
-                <a href="#"><button type="button" class="btn btn-outline-secondary btn-sm " data-bs-toggle="modal" data-bs-target="#blog_Edit">
+                <!-- <a href="#"><button type="button" class="btn btn-outline-secondary btn-sm " data-bs-toggle="modal" data-bs-target="#blog_Edit">
                     ジャンル管理
-                  </button></a>
+                  </button></a> -->
+
+                <?php require('./genre_popup/genre_management_popup.php'); ?>
               </div>
             </div>
           </div>
@@ -92,6 +94,9 @@
       slidesToScroll: 1
     });
   });
+  </script>
+  <script>
+
   </script>
   <!-- js -->
 </body>

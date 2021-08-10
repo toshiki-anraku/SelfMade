@@ -15,11 +15,11 @@
         </div>
         <div class="modal-body">
 
-          <div class="mb-3">
+          <div class="mb-3 text-start">
             <label for="exampleInputURL" class="form-label">URL</label>
             <input type="url" class="form-control" id="exampleInputURL">
           </div>
-          <div class="mb-3">
+          <div class="mb-3 text-start">
             <label for="exampleInputTitle" class="form-label">Title</label>
             <input type="text" class="form-control" id="exampleInputTitle">
           </div>
