@@ -10,9 +10,6 @@
       <div class="modal-header">
         <h5 class="modal-title container" id="exampleModalLabel">
             <div class="row d-flex align-items-center">
-              <!-- <div class="row">
-                <div class="col-6"></div>
-              </div> -->
               <div class="col-5 ">
                 ジャンル管理
               </div>
