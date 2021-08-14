@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> TeBuRa PHPSelfMade Blog</title>
+  <title> TeBuRa-Blog</title>
   <!-- title -->
   <link rel="stylesheet" type="text/css" href="../../public/css//bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../../public/css/xx.css">
@@ -12,8 +12,8 @@
 <body>
   <div id="wrapper">
     <header>
-      <?php require('../header_nonmember.php'); ?>
-      <!-- <?php require('../header_member.php'); ?> -->
+      <!-- <?php require('../header_nonmember.php'); ?> -->
+      <?php require('../header_member.php'); ?>
     </header>
     <!-- header -->
     <main class="container-fluid">

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> TeBuRa PHPSelfMade Ranking</title>
+  <title> TeBuRa-Ranking</title>
   <!-- title -->
   <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../public/css/xx.css">
@@ -16,35 +16,35 @@
       <!-- <?php require('header_member.php'); ?> -->
     </header>
     <!-- header -->
-      <main class="container-fluid">
-        <article>
-          <section>
-            <div class="row">
-              <div class="col-12">
-                <h1>Ranking</h1>
-              </div>
-              <!-- col -->
+    <main class="container-fluid">
+      <article>
+        <section>
+          <div class="row">
+            <div class="col-12">
+              <h1>Ranking</h1>
             </div>
-            <!-- row -->
-            <div class="row">
-              <div class="col-10 bg-light text-dark box">
-                  <ul class="large">
-                    <?php
+            <!-- col -->
+          </div>
+          <!-- row -->
+          <div class="row">
+            <div class="col-10 bg-light text-dark box">
+              <ul class="large">
+                <?php
                       for ($count = 0; $count < 20; $count++) {
                         echo "<li><a href= '/' >ユーザーネーム</a></li>";
                         }
                     ?>
-                  </ul>
-              </div>
-              <!-- col -->
+              </ul>
             </div>
-            <!-- row -->
-          </section>
-          <!-- section -->
-        </article>
-        <!-- article -->
-      </main>
-      <!-- main -->
+            <!-- col -->
+          </div>
+          <!-- row -->
+        </section>
+        <!-- section -->
+      </article>
+      <!-- article -->
+    </main>
+    <!-- main -->
     <footer>
       <?php require('footer.php');?>
     </footer>

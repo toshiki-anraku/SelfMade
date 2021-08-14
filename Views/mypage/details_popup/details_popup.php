@@ -82,13 +82,6 @@
   <script src="../../../public/js/jquery-3.5.1.js" type="text/javascript"></script>
   <script src="../../../public/js/popper.min.js"></script>
   <script src="../../../public/js/bootstrap.min.js"></script>
-  <script>
-  $(function() {
-    $('.dropdown-menu .dropdown-item').click(function() {
-      var visibleItem = $('.dropdown-toggle', $(this).closest('.dropdown'));
-      visibleItem.text($(this).attr('value'));
-    });
-  });
-  </script>
+  <script src="../../../public/js/dropdown-rename.js"></script>
 </body>
 </html>

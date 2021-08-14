@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> TeBuRa PHPSelfMade mypage</title>
+  <title> TeBuRa-mypage</title>
   <!-- title -->
   <link rel="stylesheet" type="text/css" href="../../public/css//bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="../../public/css/slick.css">
   <link rel="stylesheet" type="text/css" href="../../public/css/slick-theme.css">
   <link rel="stylesheet" type="text/css" href="../../public/css/slick-add.css">
+  <link rel="stylesheet" type="text/css" href="../../public/css/star-rating.css">
+  <link rel="stylesheet" type="text/css" href="../../public/css/textarea-note.css">
   <style type="text/css">
   span.b {
     font-size: larger;
@@ -20,8 +22,8 @@
 <body>
   <div id="wrapper">
     <header>
-      <?php require('../header_nonmember.php'); ?>
-      <!-- <?php require('../header_member.php'); ?> -->
+      <!-- <?php require('../header_nonmember.php'); ?> -->
+      <?php require('../header_member.php'); ?>
     </header>
     <!-- header -->
     <main>
@@ -33,7 +35,7 @@
                 ユーザネーム
               </div>
               <div class=" col-1 text-start">
-                <a href="#"><button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#blog_Edit"><i class="fas fa-cog"></i>
+                <a href="/php_base/07_SelfMade/Views/mypage/account/account_edit.php"><button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#blog_Edit"><i class="fas fa-cog"></i>
                     Edit
                   </button></a>
               </div>
@@ -41,15 +43,12 @@
                 総所持数○個
               </div>
               <div class="col-1 text-start">
-                <button type=" button" class="btn btn-link align-bottom" data-bs-toggle="modal" data-bs-target="#blog_add">
+                <!-- <button type=" button" class="btn btn-link align-bottom" data-bs-toggle="modal" data-bs-target="#blog_add">
                   +
-                </button>
+                </button> -->
+                <?php include(__DIR__ . '/details_popup/details_popup_add.php');?>
               </div>
               <div class="col-2 offset-3 text-end">
-                <!-- <a href="#"><button type="button" class="btn btn-outline-secondary btn-sm " data-bs-toggle="modal" data-bs-target="#blog_Edit">
-                    ジャンル管理
-                  </button></a> -->
-
                 <?php require('./genre_popup/genre_management_popup.php'); ?>
               </div>
             </div>
@@ -82,7 +81,9 @@
   <!-- wrapper -->
   <script src=" ../../public/js/jquery-3.5.1.js" type="text/javascript">
   </script>
+  <script src="../../public/js/popper.min.js"></script>
   <script src="../../public/js/bootstrap.min.js"></script>
+  <script src="../../public/js/dropdown-rename.js"></script>
   <script src="../../public/js/xxx.js"></script>
   <script src="../../public/js/slick.min.js"></script>
   <script>

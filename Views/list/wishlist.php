@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> TeBuRa PHPSelfMade Blog</title>
+  <title> TeBuRa-wishlist</title>
   <!-- title -->
   <link rel="stylesheet" type="text/css" href="../../public/css//bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../public/css/star-rating.css">
+  <link rel="stylesheet" type="text/css" href="../../public/css/textarea-note.css">
   <link rel="stylesheet" type="text/css" href="../../public/css/xx.css">
   <!-- css -->
 </head>
 <body>
   <div id="wrapper">
     <header>
-      <?php require('../header_nonmember.php'); ?>
-      <!-- <?php require('../header_member.php'); ?> -->
+      <!-- <?php require('../header_nonmember.php'); ?> -->
+      <?php require('../header_member.php'); ?>
     </header>
     <!-- header -->
     <main class="container-fluid">
@@ -26,9 +28,10 @@
                   <h1>欲しい物</h1>
                 </div>
                 <div class="col-1 align-self-end plus" style="margin-left: -10vh;">
-                  <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#blog_add">
+                  <!-- <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#blog_add">
                     +
-                  </button>
+                  </button> -->
+                  <?php include('../mypage/details_popup/details_popup_add.php');?>
                 </div>
                 <!-- col-1 -->
               </div>
@@ -36,9 +39,11 @@
             </div>
             <!-- col-3 -->
             <div class="col-2 align-self-end" style="margin-top: 7vh;margin-bottom: -10vh; margin-left: -22vh;">
-              <button type="button" class="btn btn-link">
-                <h3>捨てた物</h3>
-              </button>
+              <a href="/php_base/07_SelfMade/Views/list/dicardlist.php">
+                <button type="button" class="btn btn-link">
+                  <h3>捨てた物</h3>
+                </button>
+              </a>
             </div>
           </div>
           <!-- row -->
@@ -74,7 +79,9 @@
   </div>
   <!-- wrapper -->
   <script src="../../public/js/jquery-3.5.1.js" type="text/javascript"></script>
+  <script src="../../public/js/popper.min.js"></script>
   <script src="../../public/js/bootstrap.min.js"></script>
+  <script src="../../public/js/dropdown-rename.js"></script>
   <script src="../../public/js/xxx.js"></script>
   <!-- js -->
 </body>

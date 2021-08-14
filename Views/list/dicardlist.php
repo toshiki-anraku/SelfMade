@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> TeBuRa PHPSelfMade Blog</title>
+  <title> TeBuRa-dicardlist</title>
   <!-- title -->
   <link rel="stylesheet" type="text/css" href="../../public/css//bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../../public/css/xx.css">
@@ -12,8 +12,8 @@
 <body>
   <div id="wrapper">
     <header>
-      <?php require('../header_nonmember.php'); ?>
-      <!-- <?php require('../header_member.php'); ?> -->
+      <!-- <?php require('../header_nonmember.php'); ?> -->
+      <?php require('../header_member.php'); ?>
     </header>
     <!-- header -->
     <main class="container-fluid">
@@ -22,9 +22,11 @@
           <div class="row">
 
             <div class="col-2 align-self-end" style="margin-top: 7vh;margin-bottom: -10vh;margin-left: 10vh;">
-              <button type="button" class="btn btn-link">
-                <h3>欲しい物</h3>
-              </button>
+              <a href="/php_base/07_SelfMade/Views/list/wishlist.php">
+                <button type="button" class="btn btn-link">
+                  <h3>欲しい物</h3>
+                </button>
+              </a>
             </div>
 
             <div class="col-5" style="margin-left: -10vh;">

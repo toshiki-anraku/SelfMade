@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> TeBuRa PHPSelfMade PasswordReset_input</title>
+  <title> TeBuRa-PasswordReset_input</title>
   <!-- title -->
   <link rel="stylesheet" type="text/css" href="../../public/css//bootstrap.min.css">
   <!-- css -->
@@ -43,7 +43,8 @@
             </div>
 
             <div class="mt-5 pt-5 d-grid mx-auto col-1">
-              <button type="submit" class="btn btn-primary">Enter</button>
+              <a type="submit" class="btn btn-primary" href="/php_base/07_SelfMade/Views/login&signup/login.php" role="button">Enter</a>
+              <!-- <button type="submit" class="btn btn-primary">Enter</button> -->
             </div>
           </form>
         </section>

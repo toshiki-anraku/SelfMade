@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> TeBuRa PHPSelfMade Signup</title>
+  <title> TeBuRa-Signup</title>
   <!-- title -->
   <link rel="stylesheet" type="text/css" href="../../public/css//bootstrap.min.css">
   <!-- css -->
@@ -45,7 +45,8 @@
               </div>
             </div>
             <div class="mt-5 d-grid mx-auto col-1">
-              <button type="submit" class="btn btn-primary">Sign in</button>
+              <a type="submit" class="btn btn-primary" href="/php_base/07_SelfMade/Views/mypage/mypage.php" role="button">Sign in</a>
+              <!-- <button type="submit" class="btn btn-primary"><a href="/php_base/07_SelfMade/Views/mypage/mypage.php">Sign in</a></button> -->
             </div>
           </form>
         </section>

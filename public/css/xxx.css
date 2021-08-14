@@ -1,0 +1,22 @@
+html,
+body {
+  overflow: hidden;
+}
+
+#wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.box {
+  overflow-y: scroll;
+  background: #dcdcdc;
+  border: 1px solid #dcdcdc;
+  /* 線の太さ・種類・色 */
+  margin-left: 15vh;
+  /* 外側の余白 */
+  padding: 20px;
+  /* 内側の余白 */
+  position: relative;
+  height: 40vh;
+}

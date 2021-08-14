@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> TeBuRa PHPSelfMade PasswordReset_request</title>
+  <title> TeBuRa-PasswordReset_request</title>
   <!-- title -->
   <link rel="stylesheet" type="text/css" href="../../public/css//bootstrap.min.css">
   <!-- css -->
@@ -37,7 +37,8 @@
             </div>
 
             <div class="mt-5 pt-5 d-grid mx-auto col-2">
-              <button type="submit" class="btn btn-primary">Send mail</button>
+              <a type="submit" class="btn btn-primary" href="/php_base/07_SelfMade/Views/login&signup/passreset_sent.php" role="button">Send mail</a>
+              <!-- <button type="submit" class="btn btn-primary">Send mail</button> -->
             </div>
           </form>
         </section>
