@@ -56,14 +56,31 @@
           <div class="container-fluid bg-light" style="height:65vh;">
             <div class="row" style="height: 65vh;">
               <div class="col slider bg-dark" style="height: 65vh;">
-                <?php
-                  for ($count = 1; $count < 20; $count++) {
-                    echo '
-                    <div class="slider_item bg-dark border">
-                      <div class="text-left text-light p-3" style="height: 65vh;">'.$count.'</div>
-                    </div>';
-                  }
-                  ?>
+
+                <?php for ($count = 1; $count < 20; $count++) :?>
+                <div class="slider_item bg-dark border">
+                  <div class="text-left text-light p-3" style="height: 65vh;">
+                    <u>
+                      <strong>
+                        ジャンル名<?=$count?>
+                      </strong>
+                    </u>
+
+                    <div class="p-3">
+                      <tr>
+                        <th scope="row">
+                          <?=$count?>
+                        </th>
+                        <td>持ち物名</td>
+                        <td><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#details">
+                            詳細
+                          </button></td>
+                      </tr>
+                    </div>
+                  </div>
+                </div>
+                <?php endfor; ?>
+
               </div>
             </div>
           </div>

@@ -1,3 +1,12 @@
+<?php
+  require_once('../Controllers/IndexController.php');
+  //オブジェクト生成
+  $users = new IndexController();
+  //参照 select
+  $params = $users->findAll();
+
+  ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -29,11 +38,11 @@
           <div class="row">
             <div class="col-10 bg-light text-dark box">
               <ul class="large">
-                <?php
-                      for ($count = 0; $count < 20; $count++) {
-                        echo "<li><a href= '/' >ユーザーネーム</a></li>";
-                        }
-                    ?>
+                <?php foreach($params['users'] as $column): ?>
+                <li><a href='/'>
+                    <p class="h1"><?php echo $column["name"] ?></p>
+                  </a></li>
+                <?php endforeach; ?>
               </ul>
             </div>
             <!-- col -->

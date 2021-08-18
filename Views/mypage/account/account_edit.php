@@ -86,9 +86,10 @@
                 </ul>
               </div>
               <div class="col-1 offset-1">
-                <button type="button" class="btn btn-outline-secondary btn-sm">
+                <?php include(__DIR__ . '/bulk_update_popup.php');?>
+                <!-- <button type="button" class="btn btn-outline-secondary btn-sm">
                   Edit
-                </button>
+                </button> -->
               </div>
               <div class="col-1">
 
