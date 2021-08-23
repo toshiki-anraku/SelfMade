@@ -1,5 +1,5 @@
 <?php
-require_once('../config/database.php');
+require_once('/Applications/MAMP/htdocs/php_base/07_SelfMade/config/database.php');
 
 class Db{
     protected $dbh;
@@ -14,6 +14,7 @@ class Db{
                     DB_USER,
                     DB_PASSWD
                 );
+                $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 // 接続成功
             } catch (PDOException $e) {
                 echo "接続失敗: " . $e->getMessage() . "\n";

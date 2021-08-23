@@ -1,3 +1,7 @@
+<?php
+session_start();
+require('../../Models/logout.php');
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -11,8 +15,13 @@
 <body>
   <div id="wrapper">
     <header>
-      <?php require('../header_nonmember.php'); ?>
-      <!-- <?php require('../header_member.php'); ?> -->
+      <?php
+      if(isset($_SESSION['User'])){
+        require('../header_member.php');
+      }else {
+        require('../header_nonmember.php');
+      }
+       ?>
     </header>
     <!-- header -->
     <main class="container">

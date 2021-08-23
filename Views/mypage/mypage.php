@@ -1,3 +1,8 @@
+<?php
+session_start();
+require('../../Models/logout.php');
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -22,8 +27,13 @@
 <body>
   <div id="wrapper">
     <header>
-      <!-- <?php require('../header_nonmember.php'); ?> -->
-      <?php require('../header_member.php'); ?>
+      <?php
+      if(isset($_SESSION['User'])){
+        require('../header_member.php');
+      }else {
+        require('../header_nonmember.php');
+      }
+       ?>
     </header>
     <!-- header -->
     <main>
@@ -32,7 +42,7 @@
           <div class="container">
             <div class="row my-5 d-flex align-items-center">
               <div class="col-3 fs-1 text-end align-self-end">
-                ユーザネーム
+                <?= $_SESSION['User']['name']?>
               </div>
               <div class=" col-1 text-start">
                 <a href="/php_base/07_SelfMade/Views/mypage/account/account_edit.php"><button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#blog_Edit"><i class="fas fa-cog"></i>

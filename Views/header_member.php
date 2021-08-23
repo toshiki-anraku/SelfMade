@@ -6,9 +6,9 @@
     </button>
     <!-- logo -->
     <div class="collapse navbar-collapse">
-      <ul class="navbar-nav me-auto">　
+      <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/php_base/07_SelfMade/Views/index.php">Logout</a>
+          <a class="nav-link" href="?logout=1">Logout</a>
         </li>
       </ul>
       <!-- logout -->

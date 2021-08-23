@@ -1,3 +1,15 @@
+<?php
+  require_once('../../../Controllers/AccountEditController.php');
+  //オブジェクト生成
+  $accountEdit = new AccountEditController();
+
+  if($_POST){
+    $accountEdit->edit();
+    $_SESSION['User'] = $_POST;
+    }
+  //ログアウト
+  require('../../../Models/logout.php');
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -12,8 +24,13 @@
 <body>
   <div id="wrapper">
     <header>
-      <!-- <?php require('../../header_nonmember.php'); ?> -->
-      <?php require('../../header_member.php'); ?>
+      <?php
+      if(isset($_SESSION['User'])){
+        require('../../header_member.php');
+      }else {
+        require('../../header_nonmember.php');
+      }
+       ?>
     </header>
     <!-- header -->
     <main class="container">
@@ -33,23 +50,27 @@
             </div>
           </div>
           <!-- row -->
-          <form class="mx-5 px-5">
+
+          <?php
+          ?>
+          <form class="mx-5 px-5" name="form" action="" method="POST" onsubmit="return accountEdit()">
             <div class=" row my-3">
+              <input type="hidden" name="id" value="<?= $_SESSION['User']['id'] ?>">
               <label for="inputNickname3" class="col-sm-2 col-form-label">Nickname</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputNickname3">
+                <input type="text" class="form-control" id="inputNickname3" name="name" value="<?= $_SESSION['User']['name']?>">
               </div>
             </div>
             <div class="row mb-3">
               <label for="inputEmail3" class="col-sm-2 col-form-label">E-mail</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail3">
+                <input type="email" class="form-control" id="inputEmail3" name="mail" value="<?= $_SESSION['User']['mail']?>">
               </div>
             </div>
             <div class="row mb-3">
               <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
               <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword3">
+                <input type="text" class="form-control" id="inputPassword3" name="password" value="<?= $_SESSION['User']['password']?>">
               </div>
             </div>
             <div class="mt-1 d-grid mx-auto col-1">
@@ -131,6 +152,15 @@
   <script src="../../../public/js/bootstrap.min.js"></script>
   <script src="../../../public/js/xxx.js"></script>
   <script src="../../../public/js/dropdown-rename.js"></script>
+  <script>
+  function accountEdit() {
+    if (window.confirm('アカウント情報を更新します')) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  </script>
   <!-- js -->
 </body>
 </html>

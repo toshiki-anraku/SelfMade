@@ -1,6 +1,6 @@
 $(function() {
     const height=$("header").height();
-    $("#wrapper").css("padding-top", height + 20);
+    $("#wrapper").css("padding-top", height + 55);
 }); /*取得した高さ＋20pxさげた場合*/
 
 $(function() {

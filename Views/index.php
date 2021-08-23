@@ -1,10 +1,16 @@
 <?php
   require_once('../Controllers/IndexController.php');
   //オブジェクト生成
-  $users = new IndexController();
+  $index = new IndexController();
   //参照 select
-  $params = $users->findAll();
+  $params = $index->findAll();
 
+  //ログアウト処理
+  if(isset($_GET['logout'])){
+    //セッション情報を破棄する
+    $_SESSION = array();
+    session_destroy();
+  }
   ?>
 
 <!DOCTYPE html>
@@ -21,8 +27,13 @@
 <body>
   <div id="wrapper">
     <header>
-      <?php require('header_nonmember.php'); ?>
-      <!-- <?php require('header_member.php'); ?> -->
+      <?php
+      if(isset($_SESSION['User'])){
+        require('header_member.php');
+      }else {
+        require('header_nonmember.php');
+      }
+       ?>
     </header>
     <!-- header -->
     <main class="container-fluid">

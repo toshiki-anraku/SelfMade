@@ -1,3 +1,16 @@
+<?php
+  require_once('../../Controllers/SignupController.php');
+  //オブジェクト生成
+  $signup = new SignupController();
+
+  if($_POST){
+    $signup->add();
+    $_SESSION['User'] = $_POST;
+    header('Location: /php_base/07_SelfMade/Views/mypage/mypage.php');
+    exit;
+    }
+  ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -11,8 +24,13 @@
 <body>
   <div id="wrapper">
     <header>
-      <?php require('../header_nonmember.php'); ?>
-      <!-- <?php require('../header_member.php'); ?> -->
+      <?php
+      if(isset($_SESSION['User'])){
+        require('../header_member.php');
+      }else {
+        require('../header_nonmember.php');
+      }
+       ?>
     </header>
     <!-- header -->
     <main class="container">
@@ -25,28 +43,29 @@
             <!-- col-1 -->
           </div>
           <!-- row -->
-          <form class="m-5 p-5">
+          <form class="m-5 p-5" name="form" action="" method="POST">
             <div class=" row mb-4">
               <label for="inputNickname3" class="col-sm-2 col-form-label">Nickname</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputNickname3">
+                <input type="text" class="form-control" id="inputNickname3" name="name" value="">
               </div>
             </div>
             <div class="row mb-4">
               <label for="inputEmail3" class="col-sm-2 col-form-label">E-mail</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail3">
+                <input type="email" class="form-control" id="inputEmail3" name="mail" value="">
               </div>
             </div>
             <div class="row mb-4">
               <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
               <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword3">
+                <input type="password" class="form-control" id="inputPassword3" name="password" value="">
               </div>
             </div>
             <div class="mt-5 d-grid mx-auto col-1">
-              <a type="submit" class="btn btn-primary" href="/php_base/07_SelfMade/Views/mypage/mypage.php" role="button">Sign in</a>
-              <!-- <button type="submit" class="btn btn-primary"><a href="/php_base/07_SelfMade/Views/mypage/mypage.php">Sign in</a></button> -->
+              <button type="submit" class="btn btn-primary">
+                Sign in
+              </button>
             </div>
           </form>
         </section>
@@ -65,6 +84,7 @@
   </script>
   <script src="../../public/js/bootstrap.min.js"></script>
   <script src="../../public/js/xxx.js"></script>
+
   <!-- js -->
 </body>
 </html>

@@ -1,3 +1,21 @@
+<?php
+  require_once('../../Controllers/LoginController.php');
+  //オブジェクト生成
+  $login = new LoginController();
+
+  if($_POST){
+    $result = $login->login();
+    if(!empty($result)){
+      $_SESSION['User'] = $result;
+      error_log(print_r($_SESSION['User'], true));
+      header('Location: /php_base/07_SelfMade/Views/mypage/mypage.php');
+      exit;
+    }else{
+      $massage = "ログインできませんでした";
+    }
+  }
+  ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -11,8 +29,13 @@
 <body>
   <div id="wrapper">
     <header>
-      <?php require('../header_nonmember.php'); ?>
-      <!-- <?php require('../header_member.php'); ?> -->
+      <?php
+      if(isset($_SESSION['User'])){
+        require('../header_member.php');
+      }else {
+        require('../header_nonmember.php');
+      }
+       ?>
     </header>
     <!-- header -->
     <main class="container">
@@ -25,17 +48,20 @@
             <!-- col-1 -->
           </div>
           <!-- row -->
-          <form class="m-5 p-5">
+          <form class="m-5 p-5" name="form" action="" method="POST">
+            <?php if (isset($massage)) {
+            echo "<p class = 'error'>".$massage."</p>";
+            }?>
             <div class="row mb-4">
               <label for="inputEmail3" class="col-sm-2 col-form-label">E-mail</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail3">
+                <input type="email" class="form-control" id="inputEmail3" name="mail">
               </div>
             </div>
             <div class="row mb-4">
               <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
               <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword3">
+                <input type="password" class="form-control" id="inputPassword3" name="password">
               </div>
             </div>
 
@@ -43,8 +69,7 @@
               <a href="/php_base/07_SelfMade/Views/login&signup/passreset_request.php" class="link-primary">パスワードを忘れた方</a>
             </div>
             <div class="mt-4 d-grid mx-auto col-1">
-              <a type="submit" class="btn btn-primary" href="/php_base/07_SelfMade/Views/mypage/mypage.php" role="button">Login</a>
-              <!-- <button type="submit" class="btn btn-primary"> Login</button> -->
+              <button type="submit" class="btn btn-primary"> Login</button>
             </div>
           </form>
         </section>
