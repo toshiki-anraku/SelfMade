@@ -1,46 +1,33 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="../../../public/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../../../public/css/star-rating.css">
-  <link rel="stylesheet" type="text/css" href="../../../public/css/textarea-note.css">
-</head>
-<body>
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-link btn-sm" data-bs-toggle="modal" data-bs-target="#details">
-    ＋
-  </button>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-link btn-sm" data-bs-toggle="modal" data-bs-target="#details">
+  ＋
+</button>
 
-  <!-- Modal -->
+<!-- Modal -->
+<form action="" method="post">
   <div class="modal fade" id="details" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title container" id="exampleModalLabel">
             <div class="row">
-              <div class="col-4">
-                <input type="text" value="持ち物名称" name="name" size="10" maxlength="20">
+              <div class="col-5">
+                <input type="hidden" name="user_id" value="<?= $_SESSION['User']['id'] ?>">
+                <input type="hidden" name="status" value="2">
+                <input type="text" value="持ち物名称" name="item_name" size="15" maxlength="20">
               </div>
-
               <div class="dropdown col-4">
-                <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                  (ジャンル)
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <li><button class="dropdown-item" value="項目1">項目1</button></li>
-                <li><button class="dropdown-item" value="項目2">項目2</button></li>
-                <li><button class="dropdown-item" value="項目3">項目3</button></li>
-                </ul>
+                <select name="genre" class="form-select" aria-label="Default select example">
+                  <option selected>ジャンル</option>
+                  <?php foreach($params_genres['genre'] as $column): ?>
+                    <option value="<?php echo $column["genre_name"] ?>"><?php echo $column["genre_name"] ?></option>
+                  <?php endforeach; ?>
+                </select>
               </div>
-
               <div class="col">
-                <a href="#"><button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#blog_Edit">
+                <button type="submit" class="btn btn-outline-secondary btn-sm" >
                     OK
-                  </button></a>
+                </button>
               </div>
             </div>
           </h5>
@@ -68,20 +55,11 @@
             <p>Memo</p>
           </div>
           <div class="col">
-            <textarea class="note" name="" id="" cols="50" rows="10"></textarea>
+            <textarea class="note" name="memo" id="" cols="50" rows="10"></textarea>
           </div>
 
         </div>
-        <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div> -->
       </div>
     </div>
   </div>
-  <script src="../../../public/js/jquery-3.5.1.js" type="text/javascript"></script>
-  <script src="../../../public/js/popper.min.js"></script>
-  <script src="../../../public/js/bootstrap.min.js"></script>
-  <script src="../../../public/js/dropdown-rename.js"></script>
-</body>
-</html>
+</form>

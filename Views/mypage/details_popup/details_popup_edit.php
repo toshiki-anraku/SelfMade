@@ -31,9 +31,9 @@
                   (ジャンル)
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <li><button class="dropdown-item" value="項目1">項目1</button></li>
-                <li><button class="dropdown-item" value="項目2">項目2</button></li>
-                <li><button class="dropdown-item" value="項目3">項目3</button></li>
+                  <?php foreach($params['genre'] as $column): ?>
+                  <li><button class="dropdown-item" value="<?php echo $column["genre"] ?>"><?php echo $column["genre"] ?></button></li>
+                  <?php endforeach; ?>
                 </ul>
               </div>
 

@@ -1,6 +1,28 @@
 <?php
-session_start();
-require('../../Models/logout.php');
+  require_once('../../Controllers/MypageController.php');
+  //ログアウト処理
+  require('../../Models/logout.php');
+
+  //オブジェクト生成
+  $mypage = new MypageController();
+  //自分の持ち物情報
+  $params_items = $mypage->findAll_items();
+  error_log(print_r($params_items,true));
+  //全体ジャンル(持ち物追加用)
+  $params_genres = $mypage->findAll_genres();
+  //自分の持っている物のジャンル
+  $params_mygenres = $mypage->findAll_mygenres();
+  //持ち物の総数確認
+  $count_items = $mypage->countAll();
+  //持ち物追加処理
+  if($_POST){
+    $mypage->add();
+    }
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    header("Location:mypage.php");
+    exit;
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +72,7 @@ require('../../Models/logout.php');
                   </button></a>
               </div>
               <div class="col-2 fs-3 text-end">
-                総所持数○個
+                総所持数<?= $count_items?>個
               </div>
               <div class="col-1 text-start">
                 <!-- <button type=" button" class="btn btn-link align-bottom" data-bs-toggle="modal" data-bs-target="#blog_add">
@@ -67,29 +89,45 @@ require('../../Models/logout.php');
             <div class="row" style="height: 65vh;">
               <div class="col slider bg-dark" style="height: 65vh;">
 
-                <?php for ($count = 1; $count < 20; $count++) :?>
+                <?php foreach($params_mygenres["mygenre"] as $column): ?>
+                <?php //ジャンルに合わせて持ち物を参照
+                $params_myitems = $mypage->findAll_myitems($column["genre_name"]);
+                error_log(print_r($params_myitems,true));
+                ?>
+
+
                 <div class="slider_item bg-dark border">
                   <div class="text-left text-light p-3" style="height: 65vh;">
                     <u>
                       <strong>
-                        ジャンル名<?=$count?>
+                        <?php echo $column["genre_name"] ?>
                       </strong>
                     </u>
 
-                    <div class="p-3">
-                      <tr>
-                        <th scope="row">
-                          <?=$count?>
-                        </th>
-                        <td>持ち物名</td>
-                        <td><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#details">
-                            詳細
-                          </button></td>
-                      </tr>
+                    <div class="p-3 overflow-auto" style="height: 57vh;">
+                      <?php $counter = 1;?>
+                      <?php foreach($params_myitems["myitem"] as $column): ?>
+
+                      <table>
+                        <tr>
+                          <th scope=" row">
+                            <?= $counter;?>
+                          </th>
+                          <td><?= $column["item_name"]?>
+                          </td>
+                          <td><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#details">
+                              詳細
+                            </button></td>
+                        </tr>
+                      </table>
+
+                      <?php $counter++;?>
+                      <?php endforeach; ?>
+
                     </div>
                   </div>
                 </div>
-                <?php endfor; ?>
+                <?php endforeach; ?>
 
               </div>
             </div>
@@ -110,7 +148,6 @@ require('../../Models/logout.php');
   </script>
   <script src="../../public/js/popper.min.js"></script>
   <script src="../../public/js/bootstrap.min.js"></script>
-  <script src="../../public/js/dropdown-rename.js"></script>
   <script src="../../public/js/xxx.js"></script>
   <script src="../../public/js/slick.min.js"></script>
   <script>
