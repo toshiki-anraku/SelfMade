@@ -1,7 +1,7 @@
 <?php
 require_once(__DIR__ . '/Db.php');
 
-class Signup extends Db{
+class Signup extends Db {
   private $table = 'users';
 
   //DB接続
@@ -10,7 +10,7 @@ class Signup extends Db{
   }
 
   //登録 insert
-  public function add(){
+  public function add() {
     $sql = "INSERT INTO ".$this->table."(id,name,password,mail,created_at) VALUES (:id,:name,:password,:mail,:created_at)";
     $sth = $this->dbh->prepare($sql);
     $params = array(
